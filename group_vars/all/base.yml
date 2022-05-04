@@ -124,7 +124,6 @@ base_developer_tools:
   - zeal
   - google-chrome-stable
   - chromium-browser
-  - vivaldi-stable
   - brave-browser
 
 base_virtualization_tools:
