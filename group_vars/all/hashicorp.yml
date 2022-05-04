@@ -11,4 +11,9 @@ hashicorp_packages:
   - terraform
   - packer
 
+hashicorp_prerequisites:
+  - gnupg
+  - software-properties-common
+  - curl
+
 ...
