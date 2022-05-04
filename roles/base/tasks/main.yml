@@ -147,36 +147,36 @@
   become: true
   become_user: "{{ local_username }}"
 
-- name: install virtualization tools
-  apt:
-    name: "{{ base_virtualization_tools }}"
-    state: present
-    force_apt_get: true
+## - name: install virtualization tools
+##   apt:
+##     name: "{{ base_virtualization_tools }}"
+##     state: present
+##     force_apt_get: true
 
-# add user to docker group to run docker commands without sudo
-# add user to vboxusers group so that user can attach usb devices to guest OS
-- name: add user to docker and vboxusers groups
-  user:
-    name: "{{ local_username }}"
-    append: true
-    groups:
-      - docker
-#      - vboxusers
-
-# - name: install virtualbox extensions pack
-#   shell: echo 'y' | vboxmanage extpack install --replace /usr/share/virtualbox-ext-pack/Oracle*
-
-- block:
-    - name: install openssh-server package (1/2)
-      apt:
-        name: "{{ base_openssh_server.apt_package }}"
-        state: present
-        force_apt_get: true
-    - name: enable and start ssh (2/2)
-      service:
-        name: "{{ base_openssh_server.service }}"
-        state: started
-        enabled: true
-  when: falset laptop_mode
+## # add user to docker group to run docker commands without sudo
+## # add user to vboxusers group so that user can attach usb devices to guest OS
+## - name: add user to docker and vboxusers groups
+##   user:
+##     name: "{{ local_username }}"
+##     append: true
+##     groups:
+##       - docker
+## #      - vboxusers
+##
+## # - name: install virtualbox extensions pack
+## #   shell: echo 'y' | vboxmanage extpack install --replace /usr/share/virtualbox-ext-pack/Oracle*
+##
+## - block:
+##     - name: install openssh-server package (1/2)
+##       apt:
+##         name: "{{ base_openssh_server.apt_package }}"
+##         state: present
+##         force_apt_get: true
+##     - name: enable and start ssh (2/2)
+##       service:
+##         name: "{{ base_openssh_server.service }}"
+##         state: started
+##         enabled: true
+##   when: falset laptop_mode
 
 ...
