@@ -1,5 +1,16 @@
 ---
 
+- name: Update and upgrade apt packages
+  become: true
+  apt:
+    update_cache: yes
+    cache_valid_time: 86400 #One day
+
+- name: install hashicorp prerequisites
+  apt:
+    name: "{{ hashicorp_prerequisites}}"
+    force_apt_get: true
+
 - name: add hashicorp apt key
   apt_key:
     url: "{{ hashicorp_apt_key }}"
@@ -24,6 +35,12 @@
     state: present
     filename: hashicorp
   when: ansible_distribution_release == "hirsute"
+
+- name: Update and upgrade apt packages
+  become: true
+  apt:
+    update_cache: yes
+    cache_valid_time: 86400 #One day
 
 - name: install hashicorp packages
   apt:
