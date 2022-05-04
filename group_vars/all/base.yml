@@ -124,7 +124,6 @@ base_developer_tools:
   - zeal
   - google-chrome-stable
   - chromium-browser
-  - brave-browser
 
 base_virtualization_tools:
   # - virtualbox
