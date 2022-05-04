@@ -16,11 +16,13 @@
       with_items: "{{ terminal_customizations_nerd_fonts }}"
   become: true
   become_user: "{{ local_username }}"
+  ignore_errors: '{{ ansible_check_mode }}'
 
 - name: refresh fonts cache
   shell: "fc-cache -fv"
   become: true
   become_user: "{{ local_username }}"
+  ignore_errors: '{{ ansible_check_mode }}'
 
 # fix for https://github.com/gnunn1/tilix/wiki/VTE-Configuration-Issue using option 2
 # also, set font to SourceCodePro+Powerline+Awesome Regular for tmux powerline
