@@ -126,7 +126,6 @@ base_developer_tools:
   - chromium-browser
   - vivaldi-stable
   - brave-browser
-  - polybar
 
 base_virtualization_tools:
   # - virtualbox
