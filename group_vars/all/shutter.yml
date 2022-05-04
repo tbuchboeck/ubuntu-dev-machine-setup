@@ -1,0 +1,8 @@
+---
+
+shutter_repo_focal: "deb http://ppa.launchpad.net/shutter/ppa/ubuntu focal main"
+
+shutter_packages:
+  - shutter
+
+...

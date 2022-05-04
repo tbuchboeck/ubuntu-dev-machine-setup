@@ -1,0 +1,40 @@
+---
+
+- name: install brave prerequisites
+  apt:
+    name: "{{ brave_prerequisites }}"
+    force_apt_get: true
+
+- name: add brave apt key
+  apt_key:
+    url: "{{ brave_apt_key }}"
+
+- name: add brave repo for ubuntu 20.04 lts
+  apt_repository:
+    repo: "{{ brave_repo_focal }}"
+    state: present
+    filename: brave
+  when: ansible_distribution_release == "focal"
+
+## - name: add brave repo for ubuntu 20.10
+##   apt_repository:
+##     repo: "{{ brave_repo_groovy }}"
+##     state: present
+##     filename: brave
+##   when: ansible_distribution_release == "groovy"
+##
+## - name: add brave repo for ubuntu 21.04
+##   apt_repository:
+##     repo: "{{ brave_repo_hirsute }}"
+##     state: present
+##     filename: brave
+##   when: ansible_distribution_release == "hirsute"
+
+- name: install brave packages
+  apt:
+    name: "{{ brave_packages }}"
+    update_cache: true
+    force_apt_get: true
+  ignore_errors: '{{ ansible_check_mode }}'
+
+...

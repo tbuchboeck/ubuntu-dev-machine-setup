@@ -1,0 +1,17 @@
+---
+
+- name: add shutter repo for ubuntu 20.04 lts
+  apt_repository:
+    repo: "{{ shutter_repo_focal }}"
+    state: present
+    filename: shutter
+  when: ansible_distribution_release == "focal"
+
+- name: install shutter packages
+  apt:
+    name: "{{ shutter_packages }}"
+    update_cache: true
+    force_apt_get: true
+  ignore_errors: '{{ ansible_check_mode }}'
+
+...
