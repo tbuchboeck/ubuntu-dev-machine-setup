@@ -1,37 +1,37 @@
 ---
 
-# mount /tmp on tmpfs
-- block:
-    - name: clear the existing /tmp dir (1/5)
-      shell: "/bin/rm -rf *"
-      args:
-        chdir: /tmp
-        warn: false
-
-    - name: copy systemd file (2/5)
-      copy:
-        src: /usr/share/systemd/tmp.mount
-        dest: /lib/systemd/system/tmp.mount
-        remote_src: true
-
-    - name: create dir /etc/systemd/system/tmp.mount.d (3/5)
-      file:
-        path: /etc/systemd/system/tmp.mount.d
-        state: directory
-
-    - name: create tmp.mount custom options file (4/5)
-      copy:
-        dest: /etc/systemd/system/tmp.mount.d/options.conf
-        content: |
-          [Mount]
-          Options=mode=1777,strictatime,falsesuid,falsedev,size=512M
-
-    - name: start and enable tmp.mount on boot (5/5)
-      systemd:
-        name: tmp.mount
-        enabled: true
-        state: started
-        daemon_reload: true
+## # mount /tmp on tmpfs
+## - block:
+##     - name: clear the existing /tmp dir (1/5)
+##       shell: "/bin/rm -rf *"
+##       args:
+##         chdir: /tmp
+##         warn: false
+##
+##     - name: copy systemd file (2/5)
+##       copy:
+##         src: /usr/share/systemd/tmp.mount
+##         dest: /lib/systemd/system/tmp.mount
+##         remote_src: true
+##
+##     - name: create dir /etc/systemd/system/tmp.mount.d (3/5)
+##       file:
+##         path: /etc/systemd/system/tmp.mount.d
+##         state: directory
+##
+##     - name: create tmp.mount custom options file (4/5)
+##       copy:
+##         dest: /etc/systemd/system/tmp.mount.d/options.conf
+##         content: |
+##           [Mount]
+##           Options=mode=1777,strictatime,falsesuid,falsedev,size=512M
+##
+##     - name: start and enable tmp.mount on boot (5/5)
+##       systemd:
+##         name: tmp.mount
+##         enabled: true
+##         state: started
+##         daemon_reload: true
 
 - name: enable ufw firewall but allow ssh
   ufw:

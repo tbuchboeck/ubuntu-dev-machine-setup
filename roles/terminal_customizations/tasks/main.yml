@@ -24,20 +24,20 @@
   become_user: "{{ local_username }}"
   ignore_errors: '{{ ansible_check_mode }}'
 
-# fix for https://github.com/gnunn1/tilix/wiki/VTE-Configuration-Issue using option 2
-# also, set font to SourceCodePro+Powerline+Awesome Regular for tmux powerline
-- block:
-    - name: copy tilix config template
-      copy:
-        src: tilix.dconf
-        dest: /tmp/tilix.dconf
-        force: true
-
-    - name: import modified tilix config
-      shell: dconf load /com/gexperts/Tilix/ < /tmp/tilix.dconf
-      ignore_errors: true
-  become: true
-  become_user: "{{ local_username  }}"
+## # fix for https://github.com/gnunn1/tilix/wiki/VTE-Configuration-Issue using option 2
+## # also, set font to SourceCodePro+Powerline+Awesome Regular for tmux powerline
+## - block:
+##     - name: copy tilix config template
+##       copy:
+##         src: tilix.dconf
+##         dest: /tmp/tilix.dconf
+##         force: true
+##
+##     - name: import modified tilix config
+##       shell: dconf load /com/gexperts/Tilix/ < /tmp/tilix.dconf
+##       ignore_errors: true
+##   become: true
+##   become_user: "{{ local_username  }}"
 
 # sample .tmux.conf file ready to use
 - block:
