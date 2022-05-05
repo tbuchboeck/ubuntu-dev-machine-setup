@@ -126,6 +126,9 @@ base_developer_tools:
   - zeal
   - google-chrome-stable
   - chromium-browser
+  - awesome
+  - awesome-extra
+  - fonts-font-awesome
 
 base_virtualization_tools:
   # - virtualbox
