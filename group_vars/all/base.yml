@@ -129,6 +129,7 @@ base_developer_tools:
   - awesome
   - awesome-extra
   - fonts-font-awesome
+  - keychain
 
 base_virtualization_tools:
   # - virtualbox
