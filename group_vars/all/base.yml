@@ -28,6 +28,8 @@ base_system_tools:
   - pwgen
   - pavucontrol
   - rename
+  - pass
+  - gpgv2
   # - syncthing
 
 base_system_tools_laptop:
