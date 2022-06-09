@@ -23,7 +23,7 @@ base_system_tools:
   - pass
   - gpgv2
   - pinentry-tty
-  - pinentry-gq
+  - pinentry-gt
   - direnv
   # - syncthing
 
