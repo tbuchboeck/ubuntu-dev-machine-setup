@@ -24,6 +24,7 @@ base_system_tools:
   - gpgv2
   - pinentry-tty
   - pinentry-gq
+  - direnv
   # - syncthing
 
 base_system_tools_laptop:
