@@ -87,7 +87,6 @@ Summary of packages that get installed and configured:
 - remmina to connect to Windows over RDP (and also transfer files between your Linux machine and remote Windows host)
 - Nerd Fonts
 - Reduce swappiness for better perfomance
-- Mount `/tmp` on tmpfs
 - Enable ufw firewall and configure for incoming ssh
 - Install [amix/vimrc](https://github.com/amix/vimrc) Vim Distribution
   - Additional vim settings are enabled in `~/.vim_runtime/my_configs.vim` which are not part of the Vim Distribution. Edit this file if necessary.
