@@ -1,9 +1,6 @@
 ---
 
 base_archiving_tools:
-  - arj
-  - cabextract
-  - file-roller
   - mpack
   - p7zip-full
   - p7zip-rar
@@ -19,38 +16,26 @@ base_productivity_tools:
   - libreoffice
 
 base_system_tools:
-  - fatrace
-  - gnome-calculator
-  - gnome-shell-extension-bluetooth-quick-connect  # enable in gnome-tweak-tools > Extensions
-  - gnome-shell-timer  # enable in gnome-tweak-tools > Extensions
-  - gnome-tweak-tool
   - progress
   - pwgen
   - pavucontrol
   - rename
   - pass
   - gpgv2
+  - pinentry-tty
+  - pinentry-gq
   # - syncthing
 
 base_system_tools_laptop:
   # - cpufrequtils
   # - powertop
-  - tlp
-  - tlp-rdw
-  - acpi-call-dkms  # for newer ThinkPads (X220/T420 and later)
 #  - tp-smapi-dkms  # for older ThinkPads
 
 base_download_tools:
-  - aria2
-  - axel
-  - transmission
   - speedtest-cli
   - wget
-  - youtube-dl
 
 base_developer_tools:
-  - android-tools-adb
-  - android-tools-fastboot
   - ansible
   - ansible-lint
   - awscli
@@ -121,9 +106,7 @@ base_developer_tools:
   - tmuxp
   - tree
   - uget
-  - xclip
   - yamllint
-  - zeal
   - google-chrome-stable
   - chromium-browser
   - awesome
@@ -135,8 +118,8 @@ base_virtualization_tools:
   # - virtualbox
   # - virtualbox-ext-pack
   # - docker.io
-  - docker-ce
-  - docker-compose
+  #  - docker-ce
+  #  - docker-compose
 
 base_media_tools:
   - ffmpeg
@@ -145,7 +128,6 @@ base_media_tools:
   - libimage-exiftool-perl
   - mediainfo
   - soundconverter
-  - totem
   # - ubuntu-restricted-extras
   - vlc
 
