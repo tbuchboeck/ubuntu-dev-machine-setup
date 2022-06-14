@@ -40,24 +40,24 @@
 ##   become_user: "{{ local_username  }}"
 
 # sample .tmux.conf file ready to use
-- block:
-    - name: check if .tmux.conf exists in user's home dir
-      stat:
-        path: "~{{ local_username }}/.tmux.conf"
-      register: dottmuxdotconf
-
-    - name: backup .tmux.conf if it exists
-      copy:
-        src: "~{{ local_username }}/.tmux.conf"
-        dest: "~{{ local_username }}/.tmux.conf.orig"
-      when: dottmuxdotconf.stat.exists
-
-    - name: copy the sample .tmux.conf file
-      copy:
-        src: .tmux.conf
-        dest: "~{{ local_username }}/.tmux.conf"
-        force: true
-  become: true
-  become_user: "{{ local_username }}"
-
+## - block:
+##     - name: check if .tmux.conf exists in user's home dir
+##       stat:
+##         path: "~{{ local_username }}/.tmux.conf"
+##       register: dottmuxdotconf
+## 
+##     - name: backup .tmux.conf if it exists
+##       copy:
+##         src: "~{{ local_username }}/.tmux.conf"
+##         dest: "~{{ local_username }}/.tmux.conf.orig"
+##       when: dottmuxdotconf.stat.exists
+## 
+##     - name: copy the sample .tmux.conf file
+##       copy:
+##         src: .tmux.conf
+##         dest: "~{{ local_username }}/.tmux.conf"
+##         force: true
+##   become: true
+##   become_user: "{{ local_username }}"
+## 
 ...
